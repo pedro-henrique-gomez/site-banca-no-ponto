@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banca no Ponto</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<img src="../imagens/logo/logo.png" width="400">
+
+
+</header>
+
+<!-- PRODUTOS -->
+
+<section class="setor-produtos">
+
+<h2>Produtos</h2>
+
+<input type="text" id="busca" placeholder="🔎 Buscar produto..." onkeyup="buscarProduto()">
+
+<div class="categorias">
+<button onclick="filtrarCategoria('all')">Todos</button>
+<button onclick="filtrarCategoria('tabacaria')">Tabacaria</button>
+<button onclick="filtrarCategoria('carta')">Cartinhas e figurinhas</button>
+<button onclick="filtrarCategoria('cigarro')">Cigarros</button>
+<button onclick="filtrarCategoria('bebida')">Bebidas</button>
+<button onclick="filtrarCategoria('doce')">Bomboniere</button>
+<button onclick="filtrarCategoria('eletro')">Eletronicos</button>
+<button onclick="filtrarCategoria('acessorio')">Acessórios</button>
+<button onclick="filtrarCategoria('manga')">Mangás</button>
+<button onclick="filtrarCategoria('hq')">HQs</button>
+<button onclick="filtrarCategoria('infantil')">Infantil</button>
+</div>
+
+<div class="produtos" id="listaProdutos">
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/Marlboro Vermelho.png" width="100">
+<h3>Marlboro Red</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Marlboro Red',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/Marlboro gold.png" width="100">
+<h3>Marlboro Gold</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Marlboro Gold',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/dunhill azul.png" width="100">
+<h3>Dunhill Azul</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Dunhill Azul',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/dunhill carlton.png" width="100">
+<h3>Dunhill Carlton</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Dunhill Carton',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/dunhill double refresh.png" width="100">
+<h3>Dunhill Double Refresh</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Dunhill Double Refresh',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/dunhill mix refresh.png" width="100">
+<h3>Dunhill Mix Refresh</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Dunhill Mix Refresh',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/gudang garam.png" width="100">
+<h3>Gudang Garam</h3>
+<p>R$ 15,00</p>
+<button onclick="addCarrinho('Gudang Garam',15)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/kent derby azul.png" width="100">
+<h3>Kent Derby Azul</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Kent Derby Azul',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/kent derby silver.png" width="100">
+<h3>Kent Derby Silver</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Kent Derby Silver',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/lucky azul.png" width="100">
+<h3>Lucky Strike Azul</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Lucky Strike Azul',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/lucky double.png" width="100">
+<h3>Lucky Strike Double</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Lucky Strike Double',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/lucky red.png" width="100">
+<h3>Lucky Strike Red</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Lucky Strike Red',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/marlboro blue ice.png" width="100">
+<h3>Marlboro Blue Ice</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Marlboro Blue Ice',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/marlboro melancia.png" width="100">
+<h3>Marlboro Melancia</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Marlboro Melancia',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/rothmans minister  prata.png" width="100">
+<h3>Rothmans Prata</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Rothmans Prata',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/rothmans minister  purple boost.png" width="100">
+<h3>Rothmans Purple Boost</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Rothmans Purple Boost',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/rothmans minister azul.png" width="100">
+<h3>Rothmans Azul</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Rothmans Azul',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/rothmans minister global azul.png" width="100">
+<h3>Rothmans Global Azul</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Rothmans Global Azul',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/rothmans minister global red.png" width="100">
+<h3>Rothmans Global Red</h3>
+<p>R$ 12,00</p>
+<button onclick="addCarrinho('Rothmans Global Red',12)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="cigarro">
+<img src="../imagens/cigarros/souza paiol.png" width="100">
+<h3>Souza Paiol</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Souza Paiol',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/coca lata comum.png" width="80">
+<h3>Coca-Cola comum lata</h3>
+<p>R$ 8,00</p>
+<button onclick="addCarrinho('Coca-Cola comum',8)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/coca lata zero.png" width="100">
+<h3>Coca-Cola Zero lata</h3>
+<p>R$ 8,00</p>
+<button onclick="addCarrinho('Coca-Cola Zero',8)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/H2OH! limoneto.png" width="80">
+<h3>H2OH 500mL</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('H2OH',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/coca comum 1,5l.png" width="80">
+<h3>Coca-Cola comum 1,5L</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Coca-Cola 1,5L',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/coca zero 1,5l.png" width="100">
+<h3>Coca-Cola Zero 1,5L</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Coca-Cola Zero 1,5L',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/dell vale uva.png" width="100">
+<h3>Dell Vale uva 200mL</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Dell Vale uva 200mL',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/gatorade sabores.png" width="130">
+<h3>Gatorade sabores</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Gatorade sabores',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/guaravita.png" width="80">
+<h3>Guaravita</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Guaravita',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="bebida">
+<img src="../imagens/bebidas/mate leão.png" width="100">
+<h3>Mate Leão lata 290mL</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Mate Leão',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/tabaco acrema.png" width="100">
+<h3>Acrema 25g</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Tabaco Acrema;',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/tabaco amsterdam.png" width="100">
+<h3>Tabaco Amsterdam</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Tabaco Amsterdam',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/tabaco hi tobacco.png" width="100">
+<h3>Tabaco HI tobacco 25g</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Tabaco HI Tobacco',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/tabaco veio pimenta 25g.png" width="100">
+<h3>Tabaco do Veio Pimenta 25g</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Veio Pimenta 25g',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/tabaco veio pimenta 50g.png" width="100">
+<h3>Tabaco do Veio Pimenta 50g</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Veio Pimenta 50g',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/filtro hi tobacco slim.png" width="100">
+<h3>Filtro para tabaco HI Tobacco Slim</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Filtro HI Tobacco',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/tabacaria/filtro papelito longo.png" width="100">
+<h3>Filtro para tabaco Papelito longo</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Filtro Papelito',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/celulose aleda.png" width="100">
+<h3>Celulose Aleda</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Celulose Aleda',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/piteira bem bolado pop large.png" width="100">
+<h3>Piteira Bem Bolado Pop Large</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Piteira Bem Bolado pop',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/piteira bem bolado pop.png" width="100">
+<h3>Piteira Bem Bolado Pop 11/4</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Piteira Bem Bolado 1/4',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/piteira bem bolado slim.png" width="100">
+<h3>Piteira Bem Bolado Slim</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Piteira Bem Bolado Slim',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/piteira the og small.png" width="100">
+<h3>Piteira The OG Small</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Piteira The OG small',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/piteira THE OG XL.png" width="100">
+<h3>Piteira The OG XL</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Celulose Aleda',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bem bolado brown.png" width="100">
+<h3>Seda Bem Bolado Brown</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda bem Bolado Brown',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bem bolado pop mini.png" width="100">
+<h3>Seda Bem Bolado Pop Mini</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Bem Bolado Pop Mini',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bem bolado pop slim.png" width="100">
+<h3>Seda Bem Bolado Pop Slim</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Bem Bolado Pop Slim',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bros 66 blue.png" width="100">
+<h3>Seda Bros Pacote com 66 Blue</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Bros 66 Blue',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bros premim pink.png" width="100">
+<h3>Seda Bros Premium Pink</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Bros Premium Pink',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bros premium black.png" width="100">
+<h3>Seda Bros Premium Black</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Bros Premium Black',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bros silver.png" width="100">
+<h3>Seda Bross Silver</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Bros Silver',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda bross 66 brown.png" width="100">
+<h3>Seda Bros 66 Brown</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Bros 66 Brown',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda GTI 35.png" width="100">
+<h3>Seda GTI 35</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda GTI 35',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda GTI 50.png" width="100">
+<h3>Seda GTI 50</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda GTI 50',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda smolking brown.png" width="100">
+<h3>Seda Smolking Brown</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Smolking Brown',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda smolking master.png" width="100">
+<h3>Seda Smolking Master</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Smolking Master',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo alfafa.png" width="100">
+<h3>Seda Zomo Alfafa</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Zomo Alfafa',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo classic monster.png" width="100">
+<h3>Seda Classic Monster</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Zomo Classic Monster',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo mini black.png" width="100">
+<h3>Seda Zomo Mini Black</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Zomo Mini Black',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo natural mini.png" width="100">
+<h3>Seda Zomo Natural Slim</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Zomo Natural Mini',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo perfect black.png" width="100">
+<h3>Seda Zomo Perfect Black</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Zomo Perfect Black',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo perfect hemp.png" width="100">
+<h3>Seda Perfect Hemp</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Zomo Hemp',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="tabacaria">
+<img src="../imagens/seda e piteira/seda zomo slim.png" width="100">
+<h3>Seda Zomo Slim</h3>
+<p>R$ 10,00</p>
+<button onclick="addCarrinho('Seda Zomo Slim',10)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="doce">
+<img src="C:\Users\Lucas\OneDrive\Particular\Imagens\Screenshots\Captura de tela 2026-03-17 153412.png" width="300">
+<h3>Chocolate</h3>
+<p>R$ 5,00</p>
+<button onclick="addCarrinho('Chocolate',5)">Adicionar</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- CARRINHO -->
+
+<div class="carrinho-flutuante" onclick="abrirCarrinho()">
+🛒
+<span id="contador">0</span>
+</div>
+
+<div class="carrinho-painel" id="painelCarrinho">
+
+<h2>Seu Pedido</h2>
+
+<ul id="carrinho"></ul>
+
+<p id="total">Total: R$ 0.00</p>
+
+<hr>
+
+<input type="text" id="endereco" placeholder="Digite seu endereço">
+
+<select id="pagamento">
+<option value="Dinheiro">Dinheiro</option>
+<option value="PIX">PIX</option>
+<option value="Cartão">Cartão</option>
+</select>
+
+<br><br>
+
+<button onclick="limparCarrinho()">🧹 Limpar Carrinho</button>
+<button onclick="finalizarPedido()">📲 Finalizar Pedido</button>
+<button onclick="fecharCarrinho()" class="fechar">Fechar</button>
+
+</div>
+
+<footer>
+<p>© 2026 Banca no Ponto</p>
+<p>Instagram @bancanoponto</p>
+</footer>
+
+<script>
+
+/* MENU */
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active")
+}
+
+function toggleSubmenu(){
+document.getElementById("submenu").classList.toggle("active")
+}
+
+/* BUSCA */
+
+function buscarProduto(){
+let input = document.getElementById("busca").value.toLowerCase()
+let produtos = document.querySelectorAll(".produto")
+
+produtos.forEach(produto=>{
+let nome = produto.innerText.toLowerCase()
+produto.style.display = nome.includes(input) ? "block" : "none"
+})
+}
+
+/* FILTRO */
+
+function filtrarCategoria(cat){
+let produtos = document.querySelectorAll(".produto")
+
+produtos.forEach(produto=>{
+if(cat === "all"){
+produto.style.display = "block"
+}else{
+produto.style.display =
+produto.dataset.categoria === cat ? "block" : "none"
+}
+})
+}
+
+/* CARRINHO */
+
+let carrinho = []
+
+function addCarrinho(nome, preco){
+
+let item = carrinho.find(p => p.nome === nome)
+
+if(item){
+item.qtd++
+}else{
+carrinho.push({nome, preco, qtd:1})
+}
+
+atualizarCarrinho()
+abrirCarrinho()
+
+}
+
+function aumentar(i){
+carrinho[i].qtd++
+atualizarCarrinho()
+}
+
+function diminuir(i){
+if(carrinho[i].qtd > 1){
+carrinho[i].qtd--
+}else{
+carrinho.splice(i,1)
+}
+atualizarCarrinho()
+}
+
+function limparCarrinho(){
+carrinho = []
+atualizarCarrinho()
+}
+
+function atualizarCarrinho(){
+
+let lista = document.getElementById("carrinho")
+let total = 0
+
+lista.innerHTML = ""
+
+carrinho.forEach((item,i)=>{
+
+let li = document.createElement("li")
+
+li.innerHTML = `
+<div>
+<strong>${item.nome}</strong><br>
+R$ ${item.preco} x ${item.qtd}
+</div>
+
+<div>
+<button onclick="diminuir(${i})">➖</button>
+<span>${item.qtd}</span>
+<button onclick="aumentar(${i})">➕</button>
+</div>
+`
+
+lista.appendChild(li)
+
+total += item.preco * item.qtd
+
+})
+
+document.getElementById("total").innerText = "Total: R$ " + total.toFixed(2)
+document.getElementById("contador").innerText =
+carrinho.reduce((acc,item)=>acc+item.qtd,0)
+
+}
+
+/* ABRIR/FECHAR */
+
+function abrirCarrinho(){
+document.getElementById("painelCarrinho").classList.add("active")
+}
+
+function fecharCarrinho(){
+document.getElementById("painelCarrinho").classList.remove("active")
+}
+
+/* FINALIZAR */
+
+function finalizarPedido(){
+
+if(carrinho.length === 0){
+alert("Carrinho vazio!")
+return
+}
+
+let endereco = document.getElementById("endereco").value
+let pagamento = document.getElementById("pagamento").value
+
+let msg = "Pedido:%0A"
+let total = 0
+
+carrinho.forEach(item=>{
+msg += `- ${item.nome} (${item.qtd}x)%0A`
+total += item.preco * item.qtd
+})
+
+msg += `%0ATotal: R$ ${total.toFixed(2)}`
+msg += `%0AEndereço: ${endereco}`
+msg += `%0APagamento: ${pagamento}`
+
+window.open("https://wa.me/5521996909806?text=" + msg)
+
+}
+
+</script>
+
+</body>
+</html>
